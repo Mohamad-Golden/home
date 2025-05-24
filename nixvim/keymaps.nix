@@ -170,5 +170,17 @@
       action = "<cmd>NvimTreeToggle<cr>";
     }
 
+    {
+      mode = "n";
+      key = "[c";
+      action.__raw = ''
+        function()
+          require("treesitter-context").go_to_context(vim.v.count1)
+        end
+      '';
+      options = {
+        silent = true;
+      };
+    }
   ];
 }
